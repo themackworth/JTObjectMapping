@@ -37,13 +37,11 @@
                 NSObject *targetObject = [[mappings.targetClass alloc] init];
                 [targetObject setValueFromDictionary:obj mapping:mappings.mapping];
                 [self setValue:targetObject forKey:mappings.key];
-                [targetObject release];
             } else if ([mapsToValue conformsToProtocol:@protocol(JTDateMappings)] && [(NSObject *)obj isKindOfClass:[NSString class]]) {
                 id <JTDateMappings> mappings = (id <JTDateMappings>)mapsToValue;
                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                 [formatter setDateFormat:mappings.dateFormatString];
                 NSDate *date = [formatter dateFromString:obj];
-                [formatter release];
                 [self setValue:date forKey:mappings.key];
             } else if ([(NSObject *)obj isKindOfClass:[NSArray class]]) {
                 if ([mapsToValue conformsToProtocol:@protocol(JTMappings)]) {
@@ -71,7 +69,7 @@
 + (id)objectFromJSONObject:(id<JTValidJSONResponse>)object mapping:(NSDictionary *)mapping {
     id returnObject = nil;
     if ([object isKindOfClass:[NSDictionary class]]) {
-        returnObject = [[[[self class] alloc] init] autorelease];
+        returnObject = [[[self class] alloc] init];
         [returnObject setValueFromDictionary:(NSDictionary *)object mapping:mapping];
     } else if ([object isKindOfClass:[NSArray class]]) {
         NSMutableArray *array = [NSMutableArray array];

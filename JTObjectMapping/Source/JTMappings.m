@@ -16,14 +16,7 @@
     obj.key         = aKey;
     obj.mapping     = aMapping;
     obj.targetClass = aClass;
-    return [obj autorelease];
-}
-
-- (void)dealloc {
-    self.key = nil;
-    self.mapping = nil;
-    self.targetClass = nil;
-    [super dealloc];
+    return obj;
 }
 
 @end

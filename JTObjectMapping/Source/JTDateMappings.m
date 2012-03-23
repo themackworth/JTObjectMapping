@@ -15,13 +15,8 @@
     JTDateMappings *dateMappings = [[JTDateMappings alloc] init];
     dateMappings.dateFormatString = dateFormatString;
     dateMappings.key              = key;
-    return [dateMappings autorelease];
+    return dateMappings;
 }
 
-- (void)dealloc {
-    self.dateFormatString = nil;
-    self.key = nil;
-    [super dealloc];
-}
 
 @end

@@ -21,9 +21,9 @@
 
 @interface JTMappings : NSObject <JTMappings>
 
-@property (nonatomic, retain) NSString *key;
-@property (nonatomic, retain) NSDictionary *mapping;
-@property (nonatomic, assign) Class targetClass;
+@property (nonatomic) NSString *key;
+@property (nonatomic) NSDictionary *mapping;
+@property (nonatomic, weak) Class targetClass;
 
 + (id <JTMappings>)mappingWithKey:(NSString *)aKey
                       targetClass:(Class)aClass

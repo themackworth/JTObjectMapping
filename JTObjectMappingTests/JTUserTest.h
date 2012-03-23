@@ -16,15 +16,15 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSNumber *age;
 @property (nonatomic, copy) NSString *null;
-@property (nonatomic, retain) NSDate *createDate;
-@property (nonatomic, retain) NSArray *childs;
-@property (nonatomic, retain) NSArray *users;
+@property (nonatomic) NSDate *createDate;
+@property (nonatomic) NSArray *childs;
+@property (nonatomic) NSArray *users;
 
 @property (nonatomic, copy) NSString *autoString;
-@property (nonatomic, retain) NSArray *autoArray;
-@property (nonatomic, retain) NSArray *nestedArray;
+@property (nonatomic) NSArray *autoArray;
+@property (nonatomic) NSArray *nestedArray;
 //@property (nonatomic, retain) JTSocialNetworkTest *autoSocialNetwork;
 
-@property (nonatomic, retain) JTSocialNetworkTest *socialNetwork;
+@property (nonatomic) JTSocialNetworkTest *socialNetwork;
 
 @end
